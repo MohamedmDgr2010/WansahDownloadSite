@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>فتح الملف الشخصي - ونسة</title>
+</head>
+<body>
+    <p>جاري فتح الملف الشخصي في تطبيق ونسة...</p>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        const username = params.get("username");
+
+        if (username) {
+            location.replace(
+                `wansah://profile?username=${encodeURIComponent(username)}`
+            );
+        } else {
+            document.body.textContent = "اسم المستخدم غير محدد.";
+        }
+    </script>
+</body>
+</html>
